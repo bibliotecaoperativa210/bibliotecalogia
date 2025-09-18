@@ -117,7 +117,6 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
       padding: 20px;
-      transition: all 0.5s ease;
     }
 
     .libro {
@@ -180,6 +179,7 @@
       color: #F7D774;
     }
 
+    /* Sección Destacados */
     .destacados {
       max-width: 900px;
       margin: 20px auto;
@@ -197,7 +197,6 @@
       nav {
         flex-direction: column;
         align-items: center;
-        position: static; /* MENÚ YA NO STICKY en móviles */
       }
       .contenedor {
         grid-template-columns: 1fr 1fr;
@@ -232,11 +231,12 @@
     </p>
     <p>
       Esta biblioteca lleva el nombre de nuestro Q∴H∴ M∴M∴ 
-      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 21 de enero de 2024), como un homenaje 
-      a su entrega, dedicación y compromiso por la Orden.
+      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 21 de enero de 2024), quien ya descansa en el Oriente Eterno, como un homenaje 
+      a su entrega, dedicación, amor por la Orden y compromiso por ser un mejor hombre día a día. 
     </p>
   </section>
 
+  <!-- Menú de categorías -->
   <nav>
     <a data-categoria="todos">Todos</a>
     <a data-categoria="aprendiz">Aprendiz</a>
@@ -253,43 +253,17 @@
     <input type="text" id="busqueda" placeholder="🔍 Buscar un libro o categoría...">
   </div>
 
+  <!-- Sección Destacados -->
   <section class="destacados">
     <h2>📌 Libros Destacados</h2>
-    <div class="contenedor">
-      <div class="libro" data-categoria="historia">
-        <img src="portadas/historia.jpg" alt="Historia de la Masonería">
-        <h3>Historia de la Masonería</h3>
-        <p>Categoría: Historia</p>
-        <a href="libros/historia.pdf" target="_blank">📖 Leer / Descargar</a>
-      </div>
-      <div class="libro" data-categoria="simbolismo">
-        <img src="portadas/simbolismo.jpg" alt="Simbolismo Masónico">
-        <h3>Simbolismo Masónico</h3>
-        <p>Categoría: Simbolismo</p>
-        <a href="libros/simbolismo.pdf" target="_blank">📖 Leer / Descargar</a>
-      </div>
+    <div class="contenedor" id="destacados">
+      <!-- Aquí se añadirán los libros reales cuando tengamos los PDFs y portadas -->
     </div>
   </section>
 
+  <!-- Lista general de libros -->
   <div class="contenedor" id="listaLibros">
-    <div class="libro" data-categoria="aprendiz">
-      <img src="portadas/manual-aprendiz.jpg" alt="Manual del Aprendiz">
-      <h3>Manual del Aprendiz</h3>
-      <p>Categoría: Aprendiz</p>
-      <a href="libros/manual-aprendiz.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
-    <div class="libro" data-categoria="compañero">
-      <img src="portadas/compañero.jpg" alt="Manual del Compañero">
-      <h3>Manual del Compañero</h3>
-      <p>Categoría: Compañero</p>
-      <a href="libros/compañero.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
-    <div class="libro" data-categoria="maestro">
-      <img src="portadas/maestro.jpg" alt="Manual del Maestro">
-      <h3>Manual del Maestro</h3>
-      <p>Categoría: Maestro</p>
-      <a href="libros/maestro.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
+    <!-- Todos los libros se agregarán aquí con la estructura por categoría -->
   </div>
 
   <script>
