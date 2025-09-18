@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblioteca Virtual Antonio Krar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #FAFAF5;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 50px 20px;
+      overflow: hidden;
+    }
+
+    header .banner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('banner.png') no-repeat center center;
+      background-size: cover;
+      z-index: 0;
+    }
+
+    header .banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(139,94,60,0.05);
+      z-index: 1;
+    }
+
+    header .contenido-header {
+      position: relative;
+      z-index: 2;
+    }
+
+    header img {
+      max-height: 120px;
+      margin-bottom: 15px;
+    }
+
+    header h1, header h2, header h3 {
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+      color: #FFFFFF;
+    }
+
+    header h3 {
+      font-style: italic;
+      color: #FDF5C1;
+    }
+
+    .introduccion {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      background: #3B2B20;
+      padding: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    nav a {
+      color: #F4E1A1;
+      margin: 5px 10px;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      background: #F7D774;
+      color: #3B2B20;
+    }
+
+    .buscador {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .buscador input {
+      padding: 10px;
+      width: 80%;
+      max-width: 400px;
+      border: 1px solid #CFCBC4;
+      border-radius: 5px;
+    }
+
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .libro {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border: 1px solid #D9D6D0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
+      opacity: 1;
+    }
+
+    .libro.oculto {
+      opacity: 0;
+      transform: scale(0.95);
+      pointer-events: none;
+    }
+
+    .libro:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    }
+
+    .libro img {
+      max-width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: transform 0.3s;
+    }
+
+    .libro:hover img {
+      transform: scale(1.05);
+    }
+
+    .libro h3 {
+      margin: 10px 0 5px;
+      color: #3B2B20;
+    }
+
+    .libro p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .libro a {
+      color: #4B2E1E;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    .libro a:hover {
+      text-decoration: underline;
+      color: #F7D774;
+    }
+
+    .destacados {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 10px;
+    }
+
+    .destacados h2 {
+      text-align: center;
+      color: #3B2B20;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .contenedor {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contenedor {
+        grid-template-columns: 1fr;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="banner"></div>
+    <div class="contenido-header">
+      <img src="logo.png" alt="Logo Logia Operativa 210">
+      <h1>Respetable Logia Operativa Nro. 210</h1>
+      <h2>Biblioteca Virtual Antonio Krar</h2>
+      <h3>En memoria de nuestro Q∴H∴ Antonio Krar (17/10/1941 - 21/01/2024)</h3>
+    </div>
+  </header>
+
+  <section class="introduccion">
+    <p>
+      La <strong>Biblioteca Virtual Antonio Krar</strong> es un espacio creado por la 
+      <em>Respetable Logia Operativa Nro. 210</em> con el propósito de preservar, compartir y 
+      fomentar el estudio de la Masonería en sus distintos aspectos: históricos, filosóficos y simbólicos.
+    </p>
+    <p>
+      Esta biblioteca lleva el nombre de nuestro Q∴H∴ M∴M∴ 
+      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 21 de enero de 2024), quien ya descansa en el Oriente Eterno, como un homenaje 
+      a su entrega, dedicación, amor por la Orden y compromiso por ser un mejor hombre día a día. 
+    </p>
+  </section>
+
+  <nav>
+    <a data-categoria="todos">Todos</a>
+    <a data-categoria="aprendiz">Aprendiz</a>
+    <a data-categoria="compañero">Compañero</a>
+    <a data-categoria="maestro">Maestro</a>
+    <a data-categoria="grados capitulares">Grados Capitulares</a>
+    <a data-categoria="historia">Historia</a>
+    <a data-categoria="simbolismo">Simbolismo</a>
+    <a data-categoria="ritos">Ritos</a>
+    <a data-categoria="filosofía">Filosofía</a>
+  </nav>
+
+  <div class="buscador">
+    <input type="text" id="busqueda" placeholder="🔍 Buscar un libro o categoría...">
+  </div>
+
+  <section class="destacados">
+    <h2>📌 Libros Destacados</h2>
+    <div class="contenedor">
+      <div class="libro" data-categoria="historia">
+        <img src="portadas/historia.jpg" alt="Historia de la Masonería">
+        <h3>Historia de la Masonería</h3>
+        <p>Categoría: Historia</p>
+        <a href="libros/historia.pdf" target="_blank">📖 Leer / Descargar</a>
+      </div>
+
+      <div class="libro" data-categoria="simbolismo">
+        <img src="portadas/simbolismo.jpg" alt="Simbolismo Masónico">
+        <h3>Simbolismo Masónico</h3>
+        <p>Categoría: Simbolismo</p>
+        <a href="libros/simbolismo.pdf" target="_blank">📖 Leer / Descargar</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="contenedor" id="listaLibros">
+    <div class="libro" data-categoria="aprendiz">
+      <img src="portadas/manual-aprendiz.jpg" alt="Manual del Aprendiz">
+      <h3>Manual del Aprendiz</h3>
+      <p>Categoría: Aprendiz</p>
+      <a href="libros/manual-aprendiz.pdf" target="_blank">📖 Leer / Descargar</a>
+    </div>
+
+    <div class="libro" data-categoria="compañero">
+      <img src="portadas/compañero.jpg" alt="Manual del Compañero">
+      <h3>Manual del Compañero</h3>
+      <p>Categoría: Compañero</p>
+      <a href="libros/compañero.pdf" target="_blank">📖 Leer / Descargar</a>
+    </div>
+
+    <div class="libro" data-categoria="maestro">
+      <img src="portadas/maestro.jpg" alt="Manual del Maestro">
+      <h3>Manual del Maestro</h3>
+      <p>Categoría: Maestro</p>
+      <a href="libros/maestro.pdf" target="_blank">📖 Leer / Descargar</a>
+    </div>
+  </div>
+
+  <script>
+    const inputBusqueda = document.getElementById('busqueda');
+    const libros = document.querySelectorAll('.libro');
+    const categorias = document.querySelectorAll('nav a');
+
+    // Buscador por texto
+    inputBusqueda.addEventListener('keyup', function() {
+      const texto = inputBusqueda.value.toLowerCase();
+      libros.forEach(libro => {
+        const titulo = libro.querySelector('h3').textContent.toLowerCase();
+        libro.style.display = titulo.includes(texto) ? '' : 'none';
+      });
+    });
+
+    // Filtrado por categoría
+    categorias.forEach(cat => {
+      cat.addEventListener('click', function() {
+        const catSeleccionada = this.getAttribute('data-categoria');
+        libros.forEach(libro => {
+          if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
+            libro.classList.remove('oculto');
+          } else {
+            libro.classList.add('oculto');
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
