@@ -180,7 +180,6 @@
       color: #F7D774;
     }
 
-    /* Sección Destacados */
     .destacados {
       max-width: 900px;
       margin: 20px auto;
@@ -198,6 +197,7 @@
       nav {
         flex-direction: column;
         align-items: center;
+        position: static; /* MENÚ YA NO STICKY en móviles */
       }
       .contenedor {
         grid-template-columns: 1fr 1fr;
@@ -297,13 +297,12 @@
     const libros = document.querySelectorAll('.libro');
     const categorias = document.querySelectorAll('nav a');
 
-    // Buscador por título y categoría
+    // Buscador por texto
     inputBusqueda.addEventListener('keyup', function() {
       const texto = inputBusqueda.value.toLowerCase();
       libros.forEach(libro => {
         const titulo = libro.querySelector('h3').textContent.toLowerCase();
-        const categoria = libro.getAttribute('data-categoria').toLowerCase();
-        libro.style.display = (titulo.includes(texto) || categoria.includes(texto)) ? '' : 'none';
+        libro.style.display = titulo.includes(texto) ? '' : 'none';
       });
     });
 
@@ -318,7 +317,8 @@
             libro.classList.add('oculto');
           }
         });
-        // Scroll a la sección de todos los libros
+
+        // Scroll suave a la sección de libros
         document.getElementById('listaLibros').scrollIntoView({ behavior: 'smooth' });
       });
     });
