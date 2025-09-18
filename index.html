@@ -191,6 +191,10 @@
     }
 
     @media (max-width: 480px) {
+      nav {
+        position: static; /* Quitar sticky en móviles */
+        width: 100%;
+      }
       .contenedor {
         grid-template-columns: 1fr;
       }
@@ -241,18 +245,14 @@
   </div>
 
   <!-- Lista general de libros -->
-  <!-- Lista general de libros -->
-<div class="contenedor" id="listaLibros">
-
-  <div class="libro" data-categoria="aprendiz">
-    <img src="portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg" alt="Los 33 temas del Aprendiz Masón">
-    <h3>Los 33 temas del Aprendiz Masón</h3>
-    <p>Categoría: Aprendiz</p>
-    <a href="libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf" target="_blank">📖 Leer / Descargar</a>
-  </div>
-
-</div>
-
+  <div class="contenedor" id="listaLibros">
+    <!-- Ejemplo de libro -->
+    <div class="libro" data-categoria="aprendiz">
+      <img src="portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg" alt="Los 33 temas del Aprendiz Masón">
+      <h3>Los 33 temas del Aprendiz Masón</h3>
+      <p>Categoría: Aprendiz</p>
+      <a href="libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf" target="_blank">📖 Leer / Descargar</a>
+    </div>
   </div>
 
   <script>
@@ -269,7 +269,7 @@
       });
     });
 
-    // Filtrado por categoría con scroll suave
+    // Filtrado por categoría
     categorias.forEach(cat => {
       cat.addEventListener('click', function() {
         const catSeleccionada = this.getAttribute('data-categoria');
@@ -280,9 +280,6 @@
             libro.classList.add('oculto');
           }
         });
-
-        // Scroll suave a la sección de libros
-        document.getElementById('listaLibros').scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
