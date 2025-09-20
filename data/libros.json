@@ -14,6 +14,13 @@
       "categoria": "Aprendiz",
       "portada": "data/portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg",
       "archivo": "data/libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf"
-    }
+    },
+ {
+      "titulo": "300 años de Masonería y Masones Tomo II Artes",
+      "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
+      "categoria": "Historia",
+      "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-II-silencios.jpg",
+      "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-II-silencios.pdf"
+ }
   ]
 }
