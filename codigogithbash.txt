@@ -1,3 +1,16 @@
+agregar libros
+
 git add -A
 git commit -m "Agregar nuevos libros a JSON"
 git push
+
+
+
+
+modificar codigo
+
+git add index.html
+git commit -m "Actualizar HTML: carga de libros desde JSON y filtrado dinámico"
+git push
+
+
