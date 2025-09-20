@@ -179,6 +179,7 @@
       color: #F7D774;
     }
 
+    /* Optimización móvil */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -191,7 +192,7 @@
 
     @media (max-width: 480px) {
       nav {
-        position: static;
+        position: static; /* Quitar sticky en móviles */
         width: 100%;
       }
       .contenedor {
@@ -221,8 +222,8 @@
     </p>
     <p>
       Esta biblioteca lleva el nombre de nuestro Q∴H∴ M∴M∴ 
-      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 11 de enero de 2024), como homenaje 
-      a su entrega, dedicación y compromiso con la Orden.
+      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 11 de enero de 2024), quien ya descansa en el Oriente Eterno, como un homenaje 
+      a su entrega, dedicación, amor por la Orden y compromiso por ser un mejor hombre día a día. 
     </p>
   </section>
 
@@ -245,57 +246,56 @@
 
   <!-- Lista general de libros -->
   <div class="contenedor" id="listaLibros">
-    <!-- Los libros se cargarán dinámicamente desde JSON -->
+    <!-- Los libros se cargarán automáticamente desde JSON -->
   </div>
 
   <script>
-    const inputBusqueda = document.getElementById('busqueda');
-    const listaLibros = document.getElementById('listaLibros');
-    const categorias = document.querySelectorAll('nav a');
-
-    // Función para cargar libros desde JSON
+    // Cargar libros desde el JSON
     fetch('data/libros.json')
       .then(response => response.json())
       .then(data => {
+        const contenedor = document.getElementById('listaLibros');
         data.libros.forEach(libro => {
           const div = document.createElement('div');
           div.classList.add('libro');
           div.setAttribute('data-categoria', libro.categoria.toLowerCase());
-
           div.innerHTML = `
             <img src="${libro.portada}" alt="${libro.titulo}">
             <h3>${libro.titulo}</h3>
-            <p>Autor: ${libro.autor}</p>
             <p>Categoría: ${libro.categoria}</p>
+            <p>Autor: ${libro.autor}</p>
             <a href="${libro.archivo}" target="_blank">📖 Leer / Descargar</a>
           `;
-          listaLibros.appendChild(div);
+          contenedor.appendChild(div);
         });
-      });
 
-    // Buscador por texto
-    inputBusqueda.addEventListener('keyup', function() {
-      const texto = inputBusqueda.value.toLowerCase();
-      document.querySelectorAll('.libro').forEach(libro => {
-        const titulo = libro.querySelector('h3').textContent.toLowerCase();
-        const autor = libro.querySelector('p').textContent.toLowerCase();
-        libro.style.display = (titulo.includes(texto) || autor.includes(texto)) ? '' : 'none';
-      });
-    });
-
-    // Filtrado por categoría
-    categorias.forEach(cat => {
-      cat.addEventListener('click', function() {
-        const catSeleccionada = this.getAttribute('data-categoria');
-        document.querySelectorAll('.libro').forEach(libro => {
-          if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
-            libro.classList.remove('oculto');
-          } else {
-            libro.classList.add('oculto');
-          }
+        // Aplicar filtrado por categoría
+        const categorias = document.querySelectorAll('nav a');
+        categorias.forEach(cat => {
+          cat.addEventListener('click', function() {
+            const catSeleccionada = this.getAttribute('data-categoria');
+            document.querySelectorAll('.libro').forEach(libro => {
+              if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
+                libro.classList.remove('oculto');
+              } else {
+                libro.classList.add('oculto');
+              }
+            });
+          });
         });
-      });
-    });
+
+        // Aplicar buscador por texto
+        const inputBusqueda = document.getElementById('busqueda');
+        inputBusqueda.addEventListener('keyup', function() {
+          const texto = inputBusqueda.value.toLowerCase();
+          document.querySelectorAll('.libro').forEach(libro => {
+            const titulo = libro.querySelector('h3').textContent.toLowerCase();
+            const autor = libro.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+            libro.style.display = (titulo.includes(texto) || autor.includes(texto)) ? '' : 'none';
+          });
+        });
+      })
+      .catch(error => console.error('Error al cargar los libros:', error));
   </script>
 
 </body>

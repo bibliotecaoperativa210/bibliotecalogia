@@ -129,14 +129,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s, opacity 0.5s;
-      opacity: 1;
-    }
-
-    .libro.oculto {
-      opacity: 0;
-      transform: scale(0.95);
-      pointer-events: none;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .libro:hover {
@@ -179,7 +172,6 @@
       color: #F7D774;
     }
 
-    /* Optimización móvil */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -192,14 +184,13 @@
 
     @media (max-width: 480px) {
       nav {
-        position: static; /* Quitar sticky en móviles */
+        position: static;
         width: 100%;
       }
       .contenedor {
         grid-template-columns: 1fr;
       }
     }
-
   </style>
 </head>
 <body>
@@ -245,57 +236,65 @@
   </div>
 
   <!-- Lista general de libros -->
-  <div class="contenedor" id="listaLibros">
-    <!-- Los libros se cargarán automáticamente desde JSON -->
-  </div>
+  <div class="contenedor" id="listaLibros"></div>
 
   <script>
-    // Cargar libros desde el JSON
+    const contenedor = document.getElementById('listaLibros');
+    const inputBusqueda = document.getElementById('busqueda');
+
+    // Cargar libros desde JSON
     fetch('data/libros.json')
       .then(response => response.json())
       .then(data => {
-        const contenedor = document.getElementById('listaLibros');
         data.libros.forEach(libro => {
           const div = document.createElement('div');
-          div.classList.add('libro');
+          div.className = 'libro';
           div.setAttribute('data-categoria', libro.categoria.toLowerCase());
           div.innerHTML = `
             <img src="${libro.portada}" alt="${libro.titulo}">
             <h3>${libro.titulo}</h3>
-            <p>Categoría: ${libro.categoria}</p>
             <p>Autor: ${libro.autor}</p>
+            <p>Categoría: ${libro.categoria}</p>
             <a href="${libro.archivo}" target="_blank">📖 Leer / Descargar</a>
           `;
           contenedor.appendChild(div);
         });
 
-        // Aplicar filtrado por categoría
-        const categorias = document.querySelectorAll('nav a');
-        categorias.forEach(cat => {
-          cat.addEventListener('click', function() {
-            const catSeleccionada = this.getAttribute('data-categoria');
-            document.querySelectorAll('.libro').forEach(libro => {
-              if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
-                libro.classList.remove('oculto');
-              } else {
-                libro.classList.add('oculto');
-              }
-            });
-          });
-        });
+        filtrarYBuscar(); // Inicializar filtrado
+      });
 
-        // Aplicar buscador por texto
-        const inputBusqueda = document.getElementById('busqueda');
-        inputBusqueda.addEventListener('keyup', function() {
-          const texto = inputBusqueda.value.toLowerCase();
-          document.querySelectorAll('.libro').forEach(libro => {
-            const titulo = libro.querySelector('h3').textContent.toLowerCase();
-            const autor = libro.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
-            libro.style.display = (titulo.includes(texto) || autor.includes(texto)) ? '' : 'none';
+    function filtrarYBuscar() {
+      const libros = document.querySelectorAll('.libro');
+      const categorias = document.querySelectorAll('nav a');
+
+      // Filtrado por categoría
+      categorias.forEach(cat => {
+        cat.addEventListener('click', function() {
+          const catSeleccionada = this.getAttribute('data-categoria');
+          libros.forEach(libro => {
+            if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
+              libro.style.display = 'flex'; // Muestra y permite reorganización
+            } else {
+              libro.style.display = 'none'; // Oculta completamente
+            }
           });
         });
-      })
-      .catch(error => console.error('Error al cargar los libros:', error));
+      });
+
+      // Buscador por texto
+      inputBusqueda.addEventListener('keyup', function() {
+        const texto = inputBusqueda.value.toLowerCase();
+        libros.forEach(libro => {
+          const titulo = libro.querySelector('h3').textContent.toLowerCase();
+          const autor = libro.querySelector('p').textContent.toLowerCase();
+          if (titulo.includes(texto) || autor.includes(texto)) {
+            libro.style.display = 'flex';
+          } else {
+            libro.style.display = 'none';
+          }
+        });
+      });
+    }
   </script>
 
 </body>
