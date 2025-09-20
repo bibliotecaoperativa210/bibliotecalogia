@@ -246,42 +246,56 @@
 
   <!-- Lista general de libros -->
   <div class="contenedor" id="listaLibros">
-    <!-- Ejemplo de libro -->
-    <div class="libro" data-categoria="aprendiz">
-      <img src="portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg" alt="Los 33 temas del Aprendiz Masón">
-      <h3>Los 33 temas del Aprendiz Masón</h3>
-      <p>Categoría: Aprendiz</p>
-      <a href="libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
+    <!-- Los libros se cargarán automáticamente desde JSON -->
   </div>
 
   <script>
-    const inputBusqueda = document.getElementById('busqueda');
-    const libros = document.querySelectorAll('.libro');
-    const categorias = document.querySelectorAll('nav a');
-
-    // Buscador por texto
-    inputBusqueda.addEventListener('keyup', function() {
-      const texto = inputBusqueda.value.toLowerCase();
-      libros.forEach(libro => {
-        const titulo = libro.querySelector('h3').textContent.toLowerCase();
-        libro.style.display = titulo.includes(texto) ? '' : 'none';
-      });
-    });
-
-    // Filtrado por categoría
-    categorias.forEach(cat => {
-      cat.addEventListener('click', function() {
-        const catSeleccionada = this.getAttribute('data-categoria');
-        libros.forEach(libro => {
-          if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
-            libro.classList.remove('oculto');
-          } else {
-            libro.classList.add('oculto');
-          }
+    // Cargar libros desde el JSON
+    fetch('data/libros.json')
+      .then(response => response.json())
+      .then(data => {
+        const contenedor = document.getElementById('listaLibros');
+        data.libros.forEach(libro => {
+          const div = document.createElement('div');
+          div.classList.add('libro');
+          div.setAttribute('data-categoria', libro.categoria.toLowerCase());
+          div.innerHTML = `
+            <img src="${libro.portada}" alt="${libro.titulo}">
+            <h3>${libro.titulo}</h3>
+            <p>Categoría: ${libro.categoria}</p>
+            <p>Autor: ${libro.autor}</p>
+            <a href="${libro.archivo}" target="_blank">📖 Leer / Descargar</a>
+          `;
+          contenedor.appendChild(div);
         });
-      });
-    });
+
+        // Aplicar filtrado por categoría
+        const categorias = document.querySelectorAll('nav a');
+        categorias.forEach(cat => {
+          cat.addEventListener('click', function() {
+            const catSeleccionada = this.getAttribute('data-categoria');
+            document.querySelectorAll('.libro').forEach(libro => {
+              if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
+                libro.classList.remove('oculto');
+              } else {
+                libro.classList.add('oculto');
+              }
+            });
+          });
+        });
+
+        // Aplicar buscador por texto
+        const inputBusqueda = document.getElementById('busqueda');
+        inputBusqueda.addEventListener('keyup', function() {
+          const texto = inputBusqueda.value.toLowerCase();
+          document.querySelectorAll('.libro').forEach(libro => {
+            const titulo = libro.querySelector('h3').textContent.toLowerCase();
+            const autor = libro.querySelector('p:nth-of-type(2)').textContent.toLowerCase();
+            libro.style.display = (titulo.includes(texto) || autor.includes(texto)) ? '' : 'none';
+          });
+        });
+      })
+      .catch(error => console.error('Error al cargar los libros:', error));
   </script>
 
 </body>
