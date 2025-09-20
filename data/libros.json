@@ -1,0 +1,11 @@
+{
+  "libros": [
+    {
+      "titulo": "300 años de Masonería y Masones Tomo I Migraciones",
+      "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
+      "categoria": "Historia",
+      "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-I-Migraciones.jpg",
+      "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-I-Migraciones.pdf"
+    }
+  ]
+}

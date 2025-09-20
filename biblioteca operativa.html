@@ -135,7 +135,7 @@
 
     .libro.oculto {
       opacity: 0;
-      transform: scale(0.8);
+      transform: scale(0.95);
       pointer-events: none;
     }
 
@@ -179,20 +179,6 @@
       color: #F7D774;
     }
 
-    /* Sección Destacados */
-    .destacados {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 10px;
-    }
-
-    .destacados h2 {
-      text-align: center;
-      color: #3B2B20;
-      margin-bottom: 15px;
-    }
-
-    /* Optimización móvil */
     @media (max-width: 768px) {
       nav {
         flex-direction: column;
@@ -204,6 +190,10 @@
     }
 
     @media (max-width: 480px) {
+      nav {
+        position: static;
+        width: 100%;
+      }
       .contenedor {
         grid-template-columns: 1fr;
       }
@@ -231,8 +221,8 @@
     </p>
     <p>
       Esta biblioteca lleva el nombre de nuestro Q∴H∴ M∴M∴ 
-      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 21 de enero de 2024), quien ya descansa en el Oriente Eterno, como un homenaje 
-      a su entrega, dedicación, amor por la Orden y compromiso por ser un mejor hombre día a día. 
+      <strong>Antonio Krar</strong> (17 de octubre de 1941 - 11 de enero de 2024), como homenaje 
+      a su entrega, dedicación y compromiso con la Orden.
     </p>
   </section>
 
@@ -253,85 +243,60 @@
     <input type="text" id="busqueda" placeholder="🔍 Buscar un libro o categoría...">
   </div>
 
-  <!-- Sección Destacados -->
-  <section class="destacados">
-    <h2>📌 Libros Destacados</h2>
-    <div class="contenedor">
-
-      <div class="libro" data-categoria="historia">
-        <img src="portadas/historia.jpg" alt="Historia de la Masonería">
-        <h3>Historia de la Masonería</h3>
-        <p>Categoría: Historia</p>
-        <a href="libros/historia.pdf" target="_blank">📖 Leer / Descargar</a>
-      </div>
-
-      <div class="libro" data-categoria="simbolismo">
-        <img src="portadas/simbolismo.jpg" alt="Simbolismo Masónico">
-        <h3>Simbolismo Masónico</h3>
-        <p>Categoría: Simbolismo</p>
-        <a href="libros/simbolismo.pdf" target="_blank">📖 Leer / Descargar</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Lista general de libros -->
   <div class="contenedor" id="listaLibros">
-
-    <div class="libro" data-categoria="aprendiz">
-      <img src="portadas/manual-aprendiz.jpg" alt="Manual del Aprendiz">
-      <h3>Manual del Aprendiz</h3>
-      <p>Categoría: Aprendiz</p>
-      <a href="libros/manual-aprendiz.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
-
-    <div class="libro" data-categoria="compañero">
-      <img src="portadas/compañero.jpg" alt="Manual del Compañero">
-      <h3>Manual del Compañero</h3>
-      <p>Categoría: Compañero</p>
-      <a href="libros/compañero.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
-
-    <div class="libro" data-categoria="maestro">
-      <img src="portadas/maestro.jpg" alt="Manual del Maestro">
-      <h3>Manual del Maestro</h3>
-      <p>Categoría: Maestro</p>
-      <a href="libros/maestro.pdf" target="_blank">📖 Leer / Descargar</a>
-    </div>
-
+    <!-- Los libros se cargarán dinámicamente desde JSON -->
   </div>
 
   <script>
     const inputBusqueda = document.getElementById('busqueda');
-    const libros = document.querySelectorAll('.libro');
+    const listaLibros = document.getElementById('listaLibros');
     const categorias = document.querySelectorAll('nav a');
+
+    // Función para cargar libros desde JSON
+    fetch('data/libros.json')
+      .then(response => response.json())
+      .then(data => {
+        data.libros.forEach(libro => {
+          const div = document.createElement('div');
+          div.classList.add('libro');
+          div.setAttribute('data-categoria', libro.categoria.toLowerCase());
+
+          div.innerHTML = `
+            <img src="${libro.portada}" alt="${libro.titulo}">
+            <h3>${libro.titulo}</h3>
+            <p>Autor: ${libro.autor}</p>
+            <p>Categoría: ${libro.categoria}</p>
+            <a href="${libro.archivo}" target="_blank">📖 Leer / Descargar</a>
+          `;
+          listaLibros.appendChild(div);
+        });
+      });
 
     // Buscador por texto
     inputBusqueda.addEventListener('keyup', function() {
       const texto = inputBusqueda.value.toLowerCase();
-      libros.forEach(libro => {
+      document.querySelectorAll('.libro').forEach(libro => {
         const titulo = libro.querySelector('h3').textContent.toLowerCase();
-        libro.style.display = titulo.includes(texto) ? '' : 'none';
+        const autor = libro.querySelector('p').textContent.toLowerCase();
+        libro.style.display = (titulo.includes(texto) || autor.includes(texto)) ? '' : 'none';
       });
     });
 
-    // Filtrado por categoría y scroll suave
+    // Filtrado por categoría
     categorias.forEach(cat => {
       cat.addEventListener('click', function() {
         const catSeleccionada = this.getAttribute('data-categoria');
-
-        // Filtrado opcional
-        libros.forEach(libro => {
+        document.querySelectorAll('.libro').forEach(libro => {
           if(catSeleccionada === 'todos' || libro.getAttribute('data-categoria') === catSeleccionada) {
             libro.classList.remove('oculto');
           } else {
             libro.classList.add('oculto');
           }
         });
-
-        // Scroll suave a la sección de todos los libros
-        document.getElementById('listaLibros').scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
+
 </body>
 </html>
