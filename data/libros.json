@@ -1,3 +1,4 @@
+
 {
   "libros": [
     {
@@ -6,6 +7,13 @@
       "categoria": "Historia",
       "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-I-Migraciones.jpg",
       "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-I-Migraciones.pdf"
+    },
+    {
+      "titulo": "Los 33 Temas del Aprendiz Masón",
+      "autor": "ADOLFO TERRONES BENITEZ. Gdo. 32, ALFONSO LEON GARCIA GONZALEZ. Gdo. 33",
+      "categoria": "Aprendiz",
+      "portada": "data/portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg",
+      "archivo": "data/libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf"
     }
   ]
 }
