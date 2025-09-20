@@ -50,10 +50,10 @@
             "archivo": "data/libros/historia/antiguos-documentos-masonicos.PDF"
         },
         {
-            "titulo": "Masonería, un Ensayo de Interetación",
+            "titulo": "Masonería, un Ensayo de Interpretación",
             "autor": "Andrés L. Jaume",
             "categoria": "Historia",
-            "portada": "data/portadas/filosofia/Masoneria-Un-Ensayo-de-Interpretacion.jpg",
+            "portada": "data/portadas/filosofia/Masoneria,-Un-Ensayo-de-Interpretación.jpg",
             "archivo": "data/libros/filosofia/Masoneria,-Un-Ensayo-de-Interpretación.pdf"
         }
     ]
