@@ -1,4 +1,3 @@
-
 {
   "libros": [
     {
@@ -15,35 +14,33 @@
       "portada": "data/portadas/aprendiz/los-33-temas-del-aprendiz-mason.jpg",
       "archivo": "data/libros/aprendiz/los-33-temas-del-aprendiz-mason.pdf"
     },
- {
+    {
       "titulo": "300 años de Masonería y Masones Tomo II Silencios",
       "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
       "categoria": "Historia",
       "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-II-silencios.jpg",
       "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-II-silencios.pdf"
- },
-
-{
+    },
+    {
       "titulo": "300 años de Masonería y Masones Tomo III Artes",
       "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
       "categoria": "Historia",
       "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-III-Artes.jpg",
       "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-III-Artes.pdf"
-},
-
-{
+    },
+    {
       "titulo": "300 años de Masonería y Masones Tomo IV Exclusiones",
       "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
       "categoria": "Historia",
       "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-IV-Exclusion.jpg",
       "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-IV-Exclusion.pdf"
-},
-
-{
+    },
+    {
       "titulo": "300 años de Masonería y Masones Tomo V Cosmopolitismo",
       "autor": "Ricardo Martínez Esquivel, Yván Pozuelo Andrés, Rogelio Aragón",
       "categoria": "Historia",
       "portada": "data/portadas/historia/300-años-de-Masoneria-y-Masones-Tomo-V-Cosmopolitismo.jpg",
       "archivo": "data/libros/historia/300-años-de-Masoneria-y-Masones-Tomo-V-Cosmopolitismo.pdf"
+    }
   ]
 }
