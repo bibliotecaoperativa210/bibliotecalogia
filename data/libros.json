@@ -11,56 +11,56 @@
             "titulo": "10 Puntos Esenciales del Aprendiz Masón",
             "autor": "Denis Rodríguez",
             "categoria": "Aprendiz",
-            "portada": "10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.jpg",
+            "portada": "data/portadas/aprendiz/10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.jpg",
             "archivo": "data/libros/aprendiz/10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.pdf"
         },
         {
             "titulo":"Curso de Aprendiz Masón",
             "autor": "Barboza de la Torre",
             "categoria": "Aprendiz",
-            "portada": "Curso-de-Aprendiz-Mason.jpg",
+            "portada": "data/portadas/aprendiz/Curso-de-Aprendiz-Mason.jpg",
             "archivo": "data/libros/aprendiz/Curso-de-Aprendiz-Mason.pdf"
         },
         {
             "titulo": "El Aprendiz y sus Misterios",
             "autor": "Jorge Adoum",
             "categoria": "Aprendiz",
-            "portada": "EL-APRENDIZ-Y-SUS-MISTERIOS.jpg",
+            "portada": "data/portadas/aprendiz/EL-APRENDIZ-Y-SUS MISTERIOS.jpg",
             "archivo": "data/libros/aprendiz/EL-APRENDIZ-Y-SUS-MISTERIOS.pdf"
         },
         {
             "titulo": "El Libro del Aprendiz",
             "autor": "Oswald Wirth",
             "categoria": "Aprendiz",
-            "portada": "el-libro-del-aprendiz-Oswald-Wirth.jpg",
+            "portada": "data/portadas/aprendiz/el-libro-del-aprendiz-Oswald-Wirth.jpg",
             "archivo": "data/libros/aprendiz/el-libro-del-aprendiz-Oswald-Wirth.pdf"
         },
         {
             "titulo": "Esoterismo del Grado de Aprendiz masón",
             "autor": "Fermín Vale Amesti",
             "categoria": "Aprendiz",
-            "portada": "ESOTERISMO-DEL-GRADO-DE-APRENDIZ-MASON.jpg",
+            "portada": "data/portadas/aprendiz/ESOTERISMO-DEL-GRADO-DE-APRENDIZ-MASON.jpg",
             "archivo": "data/libros/aprendiz/ESOTERISMO-DEL-GRADO-DE-APRENDIZ-MASON.pdf"
         },
         {
             "titulo": "La Marcha del Aprendiz Masón",
             "autor": "Fermín Vale Amesti",
             "categoria": "Aprendiz",
-            "portada": "LAMARCHADELAPRENDIZMASON.jpg",
+            "portada": "data/portadas/aprendiz/LAMARCHADELAPRENDIZMASON.jpg",
             "archivo": "data/libros/aprendiz/LAMARCHADELAPRENDIZMASON.pdf"
         },
         {
             "titulo": "Ser Aprendiz, Aprender a Ser",
             "autor": "Javier Otaola",
             "categoria": "Aprendiz",
-            "portada": "Ser-Aprendiz-Aprender-a-Ser-Otaola-Javier.jpg",
+            "portada": "data/portadas/aprendiz/Ser-Aprendiz-Aprender-a-Ser-Otaola-Javier.jpg",
             "archivo": "data/libros/aprendiz/Ser-Aprendiz-Aprender-a-Ser-Otaola-Javier.pdf"
         },
         {
             "titulo": "Simbología del Grado de Aprendiz y Tapiz Logial",
             "autor": "Guillermo Fuchslocher",
             "categoria": "Aprendiz",
-            "portada": "Simbologia-del-Grado-de-Aprendiz-y-del-Tapiz-logial.jpg",
+            "portada": "data/portadas/aprendiz/Simbologia-del-Grado-de-Aprendiz-y-del-Tapiz-logial.jpg",
             "archivo": "data/libros/aprendiz/Simbologia-del-Grado-de-Aprendiz-y-del-Tapiz-logial.pdf"
         },
         {
