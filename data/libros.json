@@ -14,9 +14,8 @@
             "portada": "10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.jpg",
             "archivo": "data/libros/aprendiz/10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.pdf"
         },
-
         {
-            "titulo": Curso de Aprendiz Masón",
+            "titulo":"Curso de Aprendiz Masón",
             "autor": "Barboza de la Torre",
             "categoria": "Aprendiz",
             "portada": "Curso-de-Aprendiz-Mason.jpg",
@@ -26,8 +25,8 @@
             "titulo": "El Aprendiz y sus Misterios",
             "autor": "Jorge Adoum",
             "categoria": "Aprendiz",
-            "portada": "EL-APRENDIZ-Y-SUS MISTERIOS.jpg",
-            "archivo": "data/libros/aprendiz/EL-APRENDIZ-Y-SUS MISTERIOS.pdf"
+            "portada": "EL-APRENDIZ-Y-SUS-MISTERIOS.jpg",
+            "archivo": "data/libros/aprendiz/EL-APRENDIZ-Y-SUS-MISTERIOS.pdf"
         },
         {
             "titulo": "El Libro del Aprendiz",
@@ -49,13 +48,6 @@
             "categoria": "Aprendiz",
             "portada": "LAMARCHADELAPRENDIZMASON.jpg",
             "archivo": "data/libros/aprendiz/LAMARCHADELAPRENDIZMASON.pdf"
-        },
-        {
-            "titulo": "Los 94 Temas del Aprendiz Masón",
-            "autor": "Jorge. A. Marín Herrera",
-            "categoria": "Aprendiz",
-            "portada": "los-94-temas-del-aprendiz-mason-curso-avanzado.jpg",
-            "archivo": "data/libros/aprendiz/los-94-temas-del-aprendiz-mason-curso-avanzado.pdf"
         },
         {
             "titulo": "Ser Aprendiz, Aprender a Ser",
