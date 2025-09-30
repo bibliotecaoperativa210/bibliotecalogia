@@ -1,0 +1,7 @@
+       {
+            "titulo": "Diccionario de Simbolos Masonicos; Entre la Escuadra y el Compas",
+            "autor": "Eduardo Montagut",
+            "categoria": "Simbolismo",
+            "portada": "data/portadas/simbolismo/Diccionario-de-símbolos-masónicos-Entre-la-escuadra-y-el-compas.jpg",
+            "archivo": "data/libros/simbolismo/diccionario-de-simbolos-masonicos-entre-la-escuadra-y-el-compas.pdf"
+        },

@@ -15,7 +15,7 @@
             "archivo": "data/libros/aprendiz/10-Puntos-Esenciales-en-El-Grado-de-Aprendiz-Mason.pdf"
         },
         {
-            "titulo":"Curso de Aprendiz Masón",
+            "titulo": "Curso de Aprendiz Masón",
             "autor": "Barboza de la Torre",
             "categoria": "Aprendiz",
             "portada": "data/portadas/aprendiz/Curso-de-Aprendiz-Mason.jpg",
@@ -104,6 +104,34 @@
             "categoria": "Historia",
             "portada": "data/portadas/historia/antiguos-documentos-masonicos.jpg",
             "archivo": "data/libros/historia/antiguos-documentos-masonicos.PDF"
+        },
+        {
+            "titulo": "Diccionario de Simbolos Masonicos; Entre la Escuadra y el Compas",
+            "autor": "Eduardo Montagut",
+            "categoria": "Simbolismo",
+            "portada": "data/portadas/simbolismo/Diccionario-de-símbolos-masónicos-Entre-la-escuadra-y-el-compas.jpg",
+            "archivo": "data/libros/simbolismo/diccionario-de-simbolos-masonicos-entre-la-escuadra-y-el-compas.pdf"
+        },
+        {
+            "titulo": "Fragmentos de una Enseñanza Oculta Tomo I",
+            "autor": "Harold Ortíz",
+            "categoria": "Filosofia",
+            "portada": "data/portadas/filosofia/Fragmentos-De-Una-Enseñanza-Oculta.jpg",
+            "archivo": "data/libros/filosofia/.fragmentos-de-una-enseanza-oculta-tomo-1.pdf"
+        },
+        {
+            "titulo": "Mi Caja de Herramientas, Como Utilizar la Filosofia de la Masoneria en la Vida Diaria",
+            "autor": "Giovanni Nani",
+            "categoria": "Filosofia",
+            "portada": "data/portadas/filosofia/Mi-caja-de-herramientas-Como-utilizar-la-filosofía-de-la-masonería-en-la-vida-diaria.jpg",
+            "archivo": "data/libros/filosofia/MI_CAJA_DE_HERRAMIENTAS_COMO_UTILIZAR_LA.pdf"
+        },
+        {
+            "titulo": "Pasos Sobre el Nivel: 100 Meditaciones Diarias para Francmasones",
+            "autor": "Jonti Marks",
+            "categoria": "Filosofia",
+            "portada": "data/portadas/filosofia/Pasos-Sobre-el-Nivel-100-meditaciones-diarias-para-francmasones.jpg",
+            "archivo": "data/libros/filosofia/pasos-sobre-el-nivel-100-meditaciones-diarias-para-francmasones-masonic-meditations.pdf"
         },
         {
             "titulo": "Masonería, un Ensayo de Interpretación",
