@@ -115,28 +115,28 @@
         {
             "titulo": "Fragmentos de una Enseñanza Oculta Tomo I",
             "autor": "Harold Ortíz",
-            "categoria": "Filosofia",
+            "categoria": "Filosofía",
             "portada": "data/portadas/filosofia/Fragmentos-De-Una-Enseñanza-Oculta.jpg",
             "archivo": "data/libros/filosofia/.fragmentos-de-una-enseanza-oculta-tomo-1.pdf"
         },
         {
             "titulo": "Mi Caja de Herramientas, Como Utilizar la Filosofia de la Masoneria en la Vida Diaria",
             "autor": "Giovanni Nani",
-            "categoria": "Filosofia",
+            "categoria": "Filosofía",
             "portada": "data/portadas/filosofia/Mi-caja-de-herramientas-Como-utilizar-la-filosofía-de-la-masonería-en-la-vida-diaria.jpg",
             "archivo": "data/libros/filosofia/MI_CAJA_DE_HERRAMIENTAS_COMO_UTILIZAR_LA.pdf"
         },
         {
             "titulo": "Pasos Sobre el Nivel: 100 Meditaciones Diarias para Francmasones",
             "autor": "Jonti Marks",
-            "categoria": "Filosofia",
+            "categoria": "Filosofía",
             "portada": "data/portadas/filosofia/Pasos-Sobre-el-Nivel-100-meditaciones-diarias-para-francmasones.jpg",
             "archivo": "data/libros/filosofia/pasos-sobre-el-nivel-100-meditaciones-diarias-para-francmasones-masonic-meditations.pdf"
         },
         {
             "titulo": "Masonería, un Ensayo de Interpretación",
             "autor": "Andrés L. Jaume",
-            "categoria": "Filosofia",
+            "categoria": "Filosofía",
             "portada": "data/portadas/filosofia/Masoneria-Un-Ensayo-de-Interpretacion.jpg",
             "archivo": "data/libros/filosofia/Masoneria-Un-Ensayo-de-Interpretacion.pdf"
         }
